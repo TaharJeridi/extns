@@ -1,0 +1,39 @@
+buildscript {
+    ext.kotlin_version = "1.4.32"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.3"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    compileSdkVersion = 30
+    minSdkVersion = 23
+    tarketSdkVersion = 30
+    buildToolsVersion = '30.0.2'
+
+    //extNSDependencies version
+    androidXCore = "1.5.0"
+    junit = "4.+"
+
+    extNSDependencies = [
+            kotlin      : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            androidXCore: "androidx.core:core-ktx:$androidXCore",
+            junitTest   : "junit:junit:$junit"
+    ]
+}
