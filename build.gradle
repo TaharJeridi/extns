@@ -20,20 +20,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-ext {
-    compileSdkVersion = 30
-    minSdkVersion = 23
-    tarketSdkVersion = 30
-    buildToolsVersion = '30.0.2'
-
-    //extNSDependencies version
-    androidXCore = "1.5.0"
-    junit = "4.+"
-
-    extNSDependencies = [
-            kotlin      : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
-            androidXCore: "androidx.core:core-ktx:$androidXCore",
-            junitTest   : "junit:junit:$junit"
-    ]
-}
