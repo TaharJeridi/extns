@@ -1,8 +1,8 @@
 package it.tjeridi.extns
 
 import it.tjeridi.extns.extension.isNotNull
-import it.tjeridi.extns.extension.extNSListNotNullOrDefault
-import it.tjeridi.extns.extension.extNSListNotNullOrNewArrayList
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrNewArrayList
 import org.junit.Test
 
 class ListExtensionTest {
@@ -18,12 +18,12 @@ class ListExtensionTest {
 
     @Test
     fun notNullOrNewArrayListTest() {
-        assert(NULL_LIST.extNSListNotNullOrNewArrayList().isNotNull() && LIST_NOT_NULL.extNSListNotNullOrNewArrayList().containsAll(LIST_NOT_NULL))
+        assert(NULL_LIST.notNullOrNewArrayList().isNotNull() && LIST_NOT_NULL.notNullOrNewArrayList().containsAll(LIST_NOT_NULL))
     }
 
     @Test
     fun notNullOrDefaultTest() {
-        assert(NULL_LIST.extNSListNotNullOrDefault(DEFAULT_LIST).containsAll(DEFAULT_LIST) && LIST_NOT_NULL.extNSListNotNullOrDefault(DEFAULT_LIST).containsAll(LIST_NOT_NULL))
+        assert(NULL_LIST.notNullOrDefault(DEFAULT_LIST).containsAll(DEFAULT_LIST) && LIST_NOT_NULL.notNullOrDefault(DEFAULT_LIST).containsAll(LIST_NOT_NULL))
     }
 
 }

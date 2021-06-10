@@ -1,8 +1,8 @@
 package it.tjeridi.extns
 
 import it.tjeridi.extns.extension.isNotNull
-import it.tjeridi.extns.extension.extNSOBJNotNullOrDefaultValue
-import it.tjeridi.extns.extension.extNSOBJNotNullOrNewObject
+import it.tjeridi.extns.extension.notNullOrDefaultValue
+import it.tjeridi.extns.extension.notNullOrNewObject
 import org.junit.Test
 
 class ObjectExtensionTest {
@@ -16,11 +16,11 @@ class ObjectExtensionTest {
 
     @Test
     fun notNullOrNewObjectTest(){
-        assert(OBJECT_NULL.extNSOBJNotNullOrNewObject().isNotNull())
+        assert(OBJECT_NULL.notNullOrNewObject().isNotNull())
     }
 
     @Test
     fun notNullOrDefaultValueTest(){
-        assert(OBJECT_NULL.extNSOBJNotNullOrDefaultValue(OBJECT_NOT_NULL) == OBJECT_NOT_NULL)
+        assert(OBJECT_NULL.notNullOrDefaultValue(OBJECT_NOT_NULL) == OBJECT_NOT_NULL)
     }
 }

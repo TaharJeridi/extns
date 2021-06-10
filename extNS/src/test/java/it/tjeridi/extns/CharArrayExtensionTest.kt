@@ -1,8 +1,8 @@
 package it.tjeridi.extns
 
 import it.tjeridi.extns.extension.isNotNull
-import it.tjeridi.extns.extension.extNSCANotNullOrDefault
-import it.tjeridi.extns.extension.extNSCANotNullOrNewCharArray
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrNewCharArray
 import org.junit.Test
 
 class CharArrayExtensionTest {
@@ -19,13 +19,13 @@ class CharArrayExtensionTest {
 
     @Test
     fun notNullOrNewCharArrayTest() {
-        assert(CHAR_ARRAY_NULL.extNSCANotNullOrNewCharArray(2).isNotNull() && CHAR_ARRAY_NOT_NULL.extNSCANotNullOrNewCharArray(2).contentEquals(CHAR_ARRAY_NOT_NULL))
+        assert(CHAR_ARRAY_NULL.notNullOrNewCharArray(2).isNotNull() && CHAR_ARRAY_NOT_NULL.notNullOrNewCharArray(2).contentEquals(CHAR_ARRAY_NOT_NULL))
     }
 
     @Test
     fun notNullOrDefaultTest() {
-        assert(CHAR_ARRAY_NULL.extNSCANotNullOrDefault(DEFAULT_CHAR_ARRAY).contentEquals(DEFAULT_CHAR_ARRAY)
-                && CHAR_ARRAY_NOT_NULL.extNSCANotNullOrDefault(DEFAULT_CHAR_ARRAY).contentEquals(CHAR_ARRAY_NOT_NULL))
+        assert(CHAR_ARRAY_NULL.notNullOrDefault(DEFAULT_CHAR_ARRAY).contentEquals(DEFAULT_CHAR_ARRAY)
+                && CHAR_ARRAY_NOT_NULL.notNullOrDefault(DEFAULT_CHAR_ARRAY).contentEquals(CHAR_ARRAY_NOT_NULL))
     }
 
 }

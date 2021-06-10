@@ -4,7 +4,7 @@ package it.tjeridi.extns.extension
  * if value of int is null return zero int value
  */
 
-fun Int?.extNSIntNotNullOrZero(): Int {
+fun Int?.notNullOrZero(): Int {
     this?.let {
         return it
     }
@@ -15,7 +15,7 @@ fun Int?.extNSIntNotNullOrZero(): Int {
  * if value of int is null return default value
  */
 
-fun Int?.extNSIntNotNullOrDefault(defaultValue: Int): Int {
+fun Int?.notNullOrDefault(defaultValue: Int): Int {
     this?.let {
         return it
     }

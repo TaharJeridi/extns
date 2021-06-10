@@ -41,13 +41,13 @@ class StringExtensionTest {
 
     @Test
     fun notNullOrEmptyTest() {
-        assert(NULL_STRING.extNSSNotNullOrEmpty() == emptyString() && NOT_NULL_STRING.extNSSNotNullOrEmpty() == NOT_NULL_STRING)
+        assert(NULL_STRING.notNullOrEmpty() == emptyString() && NOT_NULL_STRING.notNullOrEmpty() == NOT_NULL_STRING)
     }
 
     @Test
     fun notNullOrDefaultTest() {
         assert(
-                NULL_STRING.extNSSNotNullOrDefault(DEFAULT_STRING) == DEFAULT_STRING && NOT_NULL_STRING.extNSSNotNullOrDefault(
+                NULL_STRING.notNullOrDefault(DEFAULT_STRING) == DEFAULT_STRING && NOT_NULL_STRING.notNullOrDefault(
                         DEFAULT_STRING
                 ) == NOT_NULL_STRING
         )
@@ -55,127 +55,127 @@ class StringExtensionTest {
 
     @Test
     fun toIntValueTest() {
-        assert(INT_VALUE_STRING.toIntExtNSS() == 12 && NOT_NULL_STRING.toIntExtNSS() == 0 && NULL_STRING.toIntExtNSS() == 0)
+        assert(INT_VALUE_STRING.toSafeInt() == 12 && NOT_NULL_STRING.toSafeInt() == 0 && NULL_STRING.toSafeInt() == 0)
     }
 
     @Test
     fun toIntValueOrDefaultTest() {
-        assert(INT_VALUE_STRING.toIntOrDefaultExtNSS(DEFAULT_VALUE_INT) == 12
-                && NOT_NULL_STRING.toIntOrDefaultExtNSS(DEFAULT_VALUE_INT) == DEFAULT_VALUE_INT
-                && NULL_STRING.toIntOrDefaultExtNSS(DEFAULT_VALUE_INT) == DEFAULT_VALUE_INT)
+        assert(INT_VALUE_STRING.toSafeIntOrDefault(DEFAULT_VALUE_INT) == 12
+                && NOT_NULL_STRING.toSafeIntOrDefault(DEFAULT_VALUE_INT) == DEFAULT_VALUE_INT
+                && NULL_STRING.toSafeIntOrDefault(DEFAULT_VALUE_INT) == DEFAULT_VALUE_INT)
     }
 
     @Test
     fun toFloatValueTest() {
-        assert(FLOAT_VALUE_STRING.toFloatExtNSS() == 12F
-                && NOT_NULL_STRING.toFloatExtNSS() == 0F
-                && NULL_STRING.toFloatExtNSS() == 0F)
+        assert(FLOAT_VALUE_STRING.toSafeFloat() == 12F
+                && NOT_NULL_STRING.toSafeFloat() == 0F
+                && NULL_STRING.toSafeFloat() == 0F)
     }
 
     @Test
     fun toFloatValueOrDefaultTest() {
-        assert(FLOAT_VALUE_STRING.toFloatOrDefaultExtNSS(DEFAULT_VALUE_FLOAT) == 12F
-                && NOT_NULL_STRING.toFloatOrDefaultExtNSS(DEFAULT_VALUE_FLOAT) == DEFAULT_VALUE_FLOAT
-                && NULL_STRING.toFloatOrDefaultExtNSS(DEFAULT_VALUE_FLOAT) == DEFAULT_VALUE_FLOAT)
+        assert(FLOAT_VALUE_STRING.toSafeFloatOrDefault(DEFAULT_VALUE_FLOAT) == 12F
+                && NOT_NULL_STRING.toSafeFloatOrDefault(DEFAULT_VALUE_FLOAT) == DEFAULT_VALUE_FLOAT
+                && NULL_STRING.toSafeFloatOrDefault(DEFAULT_VALUE_FLOAT) == DEFAULT_VALUE_FLOAT)
     }
 
     @Test
     fun toDoubleValueTest() {
-        assert(FLOAT_VALUE_STRING.toDoubleExtNSS() == 12.0
-                && NOT_NULL_STRING.toDoubleExtNSS() == 0.0
-                && NULL_STRING.toDoubleExtNSS() == 0.0)
+        assert(FLOAT_VALUE_STRING.toSafeDouble() == 12.0
+                && NOT_NULL_STRING.toSafeDouble() == 0.0
+                && NULL_STRING.toSafeDouble() == 0.0)
     }
 
     @Test
     fun toDoubleValueOrDefault() {
-        assert(FLOAT_VALUE_STRING.toDoubleOrDefaultExtNSS(DEFAULT_VALUE_DOUBLE) == 12.0
-                && NOT_NULL_STRING.toDoubleOrDefaultExtNSS(DEFAULT_VALUE_DOUBLE) == DEFAULT_VALUE_DOUBLE
-                && NULL_STRING.toDoubleOrDefaultExtNSS(DEFAULT_VALUE_DOUBLE) == DEFAULT_VALUE_DOUBLE)
+        assert(FLOAT_VALUE_STRING.toSafeDoubleOrDefault(DEFAULT_VALUE_DOUBLE) == 12.0
+                && NOT_NULL_STRING.toSafeDoubleOrDefault(DEFAULT_VALUE_DOUBLE) == DEFAULT_VALUE_DOUBLE
+                && NULL_STRING.toSafeDoubleOrDefault(DEFAULT_VALUE_DOUBLE) == DEFAULT_VALUE_DOUBLE)
     }
 
     @Test
     fun toBigIntegerValueTest() {
-        assert(INT_VALUE_STRING.toBigIntegerExtNSS() == BigInteger.valueOf(12)
-                && NOT_NULL_STRING.toBigIntegerExtNSS() == BigInteger.valueOf(0)
-                && NULL_STRING.toBigIntegerExtNSS() == BigInteger.valueOf(0))
+        assert(INT_VALUE_STRING.toSafeBigIntegerOrDefault() == BigInteger.valueOf(12)
+                && NOT_NULL_STRING.toSafeBigIntegerOrDefault() == BigInteger.valueOf(0)
+                && NULL_STRING.toSafeBigIntegerOrDefault() == BigInteger.valueOf(0))
     }
 
     @Test
     fun toBigIntegerValueOrDefaultTest() {
-        assert(INT_VALUE_STRING.toBigIntegerExtNSS(DEFAULT_BIG_INTEGER_VALUE) == BigInteger.valueOf(12)
-                && NOT_NULL_STRING.toBigIntegerExtNSS(DEFAULT_BIG_INTEGER_VALUE) == DEFAULT_BIG_INTEGER_VALUE
-                && NULL_STRING.toBigIntegerExtNSS(DEFAULT_BIG_INTEGER_VALUE) == DEFAULT_BIG_INTEGER_VALUE)
+        assert(INT_VALUE_STRING.toSafeBigIntegerOrDefault(DEFAULT_BIG_INTEGER_VALUE) == BigInteger.valueOf(12)
+                && NOT_NULL_STRING.toSafeBigIntegerOrDefault(DEFAULT_BIG_INTEGER_VALUE) == DEFAULT_BIG_INTEGER_VALUE
+                && NULL_STRING.toSafeBigIntegerOrDefault(DEFAULT_BIG_INTEGER_VALUE) == DEFAULT_BIG_INTEGER_VALUE)
     }
 
     @Test
     fun toBigDecimalValueTest() {
-        assert(FLOAT_VALUE_STRING.toBigDecimalExtNSS() == BigDecimal.valueOf(12.0)
-                && NOT_NULL_STRING.toBigDecimalExtNSS() == BigDecimal.valueOf(0)
-                && NULL_STRING.toBigDecimalExtNSS() == BigDecimal.valueOf(0))
+        assert(FLOAT_VALUE_STRING.toSafeBigDecimal() == BigDecimal.valueOf(12.0)
+                && NOT_NULL_STRING.toSafeBigDecimal() == BigDecimal.valueOf(0)
+                && NULL_STRING.toSafeBigDecimal() == BigDecimal.valueOf(0))
     }
 
     @Test
     fun toBigDecimalValueOrDefaultTest() {
-        assert(FLOAT_VALUE_STRING.toBigDecimalOrDefaultExtNSS(DEFAULT_BIG_DECIMAL_VALUE) == BigDecimal.valueOf(12.0)
-                && NOT_NULL_STRING.toBigDecimalOrDefaultExtNSS(DEFAULT_BIG_DECIMAL_VALUE) == DEFAULT_BIG_DECIMAL_VALUE
-                && NULL_STRING.toBigDecimalOrDefaultExtNSS(DEFAULT_BIG_DECIMAL_VALUE) == DEFAULT_BIG_DECIMAL_VALUE)
+        assert(FLOAT_VALUE_STRING.toSafeBigDecimalOrDefault(DEFAULT_BIG_DECIMAL_VALUE) == BigDecimal.valueOf(12.0)
+                && NOT_NULL_STRING.toSafeBigDecimalOrDefault(DEFAULT_BIG_DECIMAL_VALUE) == DEFAULT_BIG_DECIMAL_VALUE
+                && NULL_STRING.toSafeBigDecimalOrDefault(DEFAULT_BIG_DECIMAL_VALUE) == DEFAULT_BIG_DECIMAL_VALUE)
     }
 
     @Test
     fun toByteValueTest() {
-        assert(INT_VALUE_STRING.toByteExtNSS() == 12.toByte()
-                && NOT_NULL_STRING.toByteExtNSS() == 0.toByte()
-                && NULL_STRING.toByteExtNSS() == 0.toByte())
+        assert(INT_VALUE_STRING.toSafeByte() == 12.toByte()
+                && NOT_NULL_STRING.toSafeByte() == 0.toByte()
+                && NULL_STRING.toSafeByte() == 0.toByte())
     }
 
     @Test
     fun toByteValueOrDefaultTest() {
-        assert(INT_VALUE_STRING.toByteOrDefaultExtNSS(DEFAULT_BYTE_VALUE) == 12.toByte()
-                && NOT_NULL_STRING.toByteOrDefaultExtNSS(DEFAULT_BYTE_VALUE) == DEFAULT_BYTE_VALUE
-                && NULL_STRING.toByteOrDefaultExtNSS(DEFAULT_BYTE_VALUE) == DEFAULT_BYTE_VALUE)
+        assert(INT_VALUE_STRING.toSafeByteOrDefault(DEFAULT_BYTE_VALUE) == 12.toByte()
+                && NOT_NULL_STRING.toSafeByteOrDefault(DEFAULT_BYTE_VALUE) == DEFAULT_BYTE_VALUE
+                && NULL_STRING.toSafeByteOrDefault(DEFAULT_BYTE_VALUE) == DEFAULT_BYTE_VALUE)
     }
 
     @Test
     fun toShortValueTest() {
-        assert(INT_VALUE_STRING.toShortExtNSS() == 12.toShort()
-                && NOT_NULL_STRING.toShortExtNSS() == 0.toShort()
-                && NULL_STRING.toShortExtNSS() == 0.toShort())
+        assert(INT_VALUE_STRING.toSafeShort() == 12.toShort()
+                && NOT_NULL_STRING.toSafeShort() == 0.toShort()
+                && NULL_STRING.toSafeShort() == 0.toShort())
     }
 
     @Test
     fun toShortValueOrDefaultTest() {
-        assert(INT_VALUE_STRING.toShortOrDefaultExtNSS(DEFAULT_SHORT_VALUE) == 12.toShort()
-                && NOT_NULL_STRING.toShortOrDefaultExtNSS(DEFAULT_SHORT_VALUE) == DEFAULT_SHORT_VALUE
-                && NULL_STRING.toShortOrDefaultExtNSS(DEFAULT_SHORT_VALUE) == DEFAULT_SHORT_VALUE)
+        assert(INT_VALUE_STRING.toSafeShortOrDefault(DEFAULT_SHORT_VALUE) == 12.toShort()
+                && NOT_NULL_STRING.toSafeShortOrDefault(DEFAULT_SHORT_VALUE) == DEFAULT_SHORT_VALUE
+                && NULL_STRING.toSafeShortOrDefault(DEFAULT_SHORT_VALUE) == DEFAULT_SHORT_VALUE)
     }
 
     @Test
     fun toLongValueTest() {
-        assert(INT_VALUE_STRING.toLongExtNSS() == 12.toLong()
-                && NOT_NULL_STRING.toLongExtNSS() == 0.toLong()
-                && NULL_STRING.toLongExtNSS() == 0.toLong())
+        assert(INT_VALUE_STRING.toSafeLong() == 12.toLong()
+                && NOT_NULL_STRING.toSafeLong() == 0.toLong()
+                && NULL_STRING.toSafeLong() == 0.toLong())
     }
 
     @Test
     fun toLongValueOrDefault() {
-        assert(INT_VALUE_STRING.toLongOrDefaultExtNSS(DEFAULT_LONG_VALUE) == 12.toLong()
-                && NOT_NULL_STRING.toLongOrDefaultExtNSS(DEFAULT_LONG_VALUE) == DEFAULT_LONG_VALUE
-                && NULL_STRING.toLongOrDefaultExtNSS(DEFAULT_LONG_VALUE) == DEFAULT_LONG_VALUE)
+        assert(INT_VALUE_STRING.toSafeLongOrDefault(DEFAULT_LONG_VALUE) == 12.toLong()
+                && NOT_NULL_STRING.toSafeLongOrDefault(DEFAULT_LONG_VALUE) == DEFAULT_LONG_VALUE
+                && NULL_STRING.toSafeLongOrDefault(DEFAULT_LONG_VALUE) == DEFAULT_LONG_VALUE)
     }
 
     @Test
     fun toBooleanValueTest() {
-        assert(BOOLEAN_VALUE_STRING.toBooleanExtNSS() && !NOT_NULL_STRING.toBooleanExtNSS() && !NULL_STRING.toBooleanExtNSS())
+        assert(BOOLEAN_VALUE_STRING.toSafeBoolean() && !NOT_NULL_STRING.toSafeBoolean() && !NULL_STRING.toSafeBoolean())
     }
 
     @Test
     fun toBooleanValueOrDefaultTest() {
-        assert(BOOLEAN_VALUE_STRING.toBooleanOrDefaultExtNSS(false) && !NOT_NULL_STRING.toBooleanOrDefaultExtNSS(true) && NULL_STRING.toBooleanOrDefaultExtNSS(true))
+        assert(BOOLEAN_VALUE_STRING.toSafeBooleanOrDefault(false) && !NOT_NULL_STRING.toSafeBooleanOrDefault(true) && NULL_STRING.toSafeBooleanOrDefault(true))
     }
 
     @Test
     fun stringArrayTest(){
-        assert(extNSSStringArray(BOOLEAN_VALUE_STRING, NOT_NULL_STRING) == arrayListOf(BOOLEAN_VALUE_STRING, NOT_NULL_STRING))
+        assert(notEmptyStringArray(BOOLEAN_VALUE_STRING, NOT_NULL_STRING) == arrayListOf(BOOLEAN_VALUE_STRING, NOT_NULL_STRING))
     }
 
 

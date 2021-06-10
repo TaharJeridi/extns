@@ -1,8 +1,8 @@
 package it.tjeridi.extns
 
 import it.tjeridi.extns.extension.isNotNull
-import it.tjeridi.extns.extension.extNSLANotNullOrDefaultValue
-import it.tjeridi.extns.extension.extNSLANotNullOrNewLongArray
+import it.tjeridi.extns.extension.notNullOrDefaultValue
+import it.tjeridi.extns.extension.notNullOrNewLongArray
 import org.junit.Test
 
 class LongArrayExtensionTest {
@@ -19,12 +19,12 @@ class LongArrayExtensionTest {
 
     @Test
     fun notNullOrNewArrayTest() {
-        assert(LONG_ARRAY_NULL.extNSLANotNullOrNewLongArray(2).isNotNull() && LONG_ARRAY.extNSLANotNullOrNewLongArray(2).contentEquals(LONG_ARRAY))
+        assert(LONG_ARRAY_NULL.notNullOrNewLongArray(2).isNotNull() && LONG_ARRAY.notNullOrNewLongArray(2).contentEquals(LONG_ARRAY))
     }
 
     @Test
     fun notNullOrDefaultTest() {
-        assert(LONG_ARRAY_NULL.extNSLANotNullOrDefaultValue(LONG_ARRAY_DEFAULT).contentEquals(LONG_ARRAY_DEFAULT) && LONG_ARRAY.extNSLANotNullOrDefaultValue(LONG_ARRAY_DEFAULT).contentEquals(LONG_ARRAY))
+        assert(LONG_ARRAY_NULL.notNullOrDefaultValue(LONG_ARRAY_DEFAULT).contentEquals(LONG_ARRAY_DEFAULT) && LONG_ARRAY.notNullOrDefaultValue(LONG_ARRAY_DEFAULT).contentEquals(LONG_ARRAY))
     }
 
 

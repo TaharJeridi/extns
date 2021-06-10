@@ -1,7 +1,7 @@
 package it.tjeridi.extns
 
-import it.tjeridi.extns.extension.extNSDBNotNullOrDefault
-import it.tjeridi.extns.extension.extNSDBNotNullOrZero
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrZero
 import org.junit.Test
 
 class DoubleExtensionTest {
@@ -19,13 +19,13 @@ class DoubleExtensionTest {
 
     @Test
     fun notNullOrZeroTest() {
-        assert(DOUBLE_VALUE_NULL.extNSDBNotNullOrZero() == 0.0
-                && DOUBLE_VALUE_NOT_NULL.extNSDBNotNullOrZero() == DOUBLE_VALUE_NOT_NULL)
+        assert(DOUBLE_VALUE_NULL.notNullOrZero() == 0.0
+                && DOUBLE_VALUE_NOT_NULL.notNullOrZero() == DOUBLE_VALUE_NOT_NULL)
     }
 
     @Test
     fun notNullOrDefaultTest() {
-        assert(DOUBLE_VALUE_NULL.extNSDBNotNullOrDefault(DEFAULT_VALUE_DOUBLE) == DEFAULT_VALUE_DOUBLE
-                && DOUBLE_VALUE_NOT_NULL.extNSDBNotNullOrDefault(DEFAULT_VALUE_DOUBLE) == DOUBLE_VALUE_NOT_NULL)
+        assert(DOUBLE_VALUE_NULL.notNullOrDefault(DEFAULT_VALUE_DOUBLE) == DEFAULT_VALUE_DOUBLE
+                && DOUBLE_VALUE_NOT_NULL.notNullOrDefault(DEFAULT_VALUE_DOUBLE) == DOUBLE_VALUE_NOT_NULL)
     }
 }

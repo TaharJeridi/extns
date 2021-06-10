@@ -4,7 +4,7 @@ package it.tjeridi.extns.extension
  * if value of boolean is null return false
  */
 
-fun Boolean?.extNSBLNotNullOrFalse(): Boolean {
+fun Boolean?.notNullOrFalse(): Boolean {
     this?.let {
         return it
     }
@@ -15,7 +15,7 @@ fun Boolean?.extNSBLNotNullOrFalse(): Boolean {
  * if value of boolean is null return true
  */
 
-fun Boolean?.extNSBLNotNullOrTrue(): Boolean {
+fun Boolean?.notNullOrTrue(): Boolean {
     this?.let {
         return it
     }
@@ -26,7 +26,7 @@ fun Boolean?.extNSBLNotNullOrTrue(): Boolean {
  * if value of boolean is null return default boolean value
  */
 
-fun Boolean?.extNSBLNotNullOrDefault(defaultValue: Boolean): Boolean {
+fun Boolean?.notNullOrDefault(defaultValue: Boolean): Boolean {
     this?.let {
         return it
     }

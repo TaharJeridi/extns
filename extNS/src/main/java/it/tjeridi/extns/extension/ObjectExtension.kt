@@ -7,7 +7,7 @@ import java.math.BigInteger
  * if object is null return new object if constructor is public and not have parameter
  */
 
-inline fun <reified T> T?.extNSOBJNotNullOrNewObject(): T {
+inline fun <reified T> T?.notNullOrNewObject(): T {
     this?.let {
         return it
     }
@@ -18,7 +18,7 @@ inline fun <reified T> T?.extNSOBJNotNullOrNewObject(): T {
  * if object is null return default object
  */
 
-fun <T> T?.extNSOBJNotNullOrDefaultValue(defaultValue: T): T {
+fun <T> T?.notNullOrDefaultValue(defaultValue: T): T {
     this?.let {
         return it
     }

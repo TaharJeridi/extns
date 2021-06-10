@@ -6,7 +6,7 @@ import java.math.BigInteger
  * if value of big integer is null return zero big integer value
  */
 
-fun BigInteger?.extNSBINotNullOrZero(): BigInteger {
+fun BigInteger?.notNullOrZero(): BigInteger {
     this?.let {
         return it
     }
@@ -17,7 +17,7 @@ fun BigInteger?.extNSBINotNullOrZero(): BigInteger {
  * if value of big integer is null return default big integer value
  */
 
-fun BigInteger?.extNSBINotNullOrDefault(defaultValue: BigInteger): BigInteger {
+fun BigInteger?.notNullOrDefault(defaultValue: BigInteger): BigInteger {
     this?.let {
         return it
     }

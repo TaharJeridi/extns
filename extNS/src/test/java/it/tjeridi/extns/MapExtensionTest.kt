@@ -1,8 +1,8 @@
 package it.tjeridi.extns
 
 import it.tjeridi.extns.extension.isNotNull
-import it.tjeridi.extns.extension.extNSNotNullOrDefault
-import it.tjeridi.extns.extension.extNSNotNullOrNewMap
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrNewMap
 import org.junit.Test
 
 class MapExtensionTest {
@@ -19,12 +19,12 @@ class MapExtensionTest {
 
     @Test
     fun notNullOrNewMapTest(){
-        assert(NULL_MAP.extNSNotNullOrNewMap().isNotNull() && NULL_MAP.extNSNotNullOrNewMap().isEmpty())
+        assert(NULL_MAP.notNullOrNewMap().isNotNull() && NULL_MAP.notNullOrNewMap().isEmpty())
     }
 
     @Test
     fun notNullOrDefaultTest(){
-        assert(NOT_NULL_MAP.extNSNotNullOrDefault(DEFAULT_MAP) == NOT_NULL_MAP)
+        assert(NOT_NULL_MAP.notNullOrDefault(DEFAULT_MAP) == NOT_NULL_MAP)
     }
 
 

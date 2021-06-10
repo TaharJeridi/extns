@@ -4,7 +4,7 @@ package it.tjeridi.extns.extension
  * if value of short is null return Short.MIN_VALUE
  */
 
-fun Short?.extNSSHNotNullOrMinValue(): Short {
+fun Short?.notNullOrMinValue(): Short {
     this?.let {
         return it
     }
@@ -15,7 +15,7 @@ fun Short?.extNSSHNotNullOrMinValue(): Short {
  * if value of short is null return default short value
  */
 
-fun Short?.extNSSHNotNullOrDefault(defaultValue: Short): Short {
+fun Short?.notNullOrDefault(defaultValue: Short): Short {
     this?.let {
         return it
     }

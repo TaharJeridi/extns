@@ -1,7 +1,7 @@
 package it.tjeridi.extns
 
-import it.tjeridi.extns.extension.extNSFLNotNullOrZero
-import it.tjeridi.extns.extension.extNSFLNotNullOrDefault
+import it.tjeridi.extns.extension.notNullOrZero
+import it.tjeridi.extns.extension.notNullOrDefault
 import org.junit.Test
 
 class FloatExtensionTest {
@@ -18,13 +18,13 @@ class FloatExtensionTest {
 
     @Test
     fun notNullOrZeroTest() {
-        assert(FLOAT_VALUE_NULL.extNSFLNotNullOrZero() == 0F
-                && FLOAT_VALUE_NOT_NULL.extNSFLNotNullOrZero() == FLOAT_VALUE_NOT_NULL)
+        assert(FLOAT_VALUE_NULL.notNullOrZero() == 0F
+                && FLOAT_VALUE_NOT_NULL.notNullOrZero() == FLOAT_VALUE_NOT_NULL)
     }
 
     @Test
     fun notNullOrDefaultTest() {
-        assert(FLOAT_VALUE_NULL.extNSFLNotNullOrDefault(DEFAULT_VALUE_FLOAT) == DEFAULT_VALUE_FLOAT
-                && FLOAT_VALUE_NOT_NULL.extNSFLNotNullOrDefault(DEFAULT_VALUE_FLOAT) == FLOAT_VALUE_NOT_NULL)
+        assert(FLOAT_VALUE_NULL.notNullOrDefault(DEFAULT_VALUE_FLOAT) == DEFAULT_VALUE_FLOAT
+                && FLOAT_VALUE_NOT_NULL.notNullOrDefault(DEFAULT_VALUE_FLOAT) == FLOAT_VALUE_NOT_NULL)
     }
 }

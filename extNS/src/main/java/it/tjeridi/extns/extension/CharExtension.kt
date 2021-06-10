@@ -4,7 +4,7 @@ package it.tjeridi.extns.extension
  * if char is null return Char.MIN_VALUE
  */
 
-fun Char?.extNSCRNotNullOrMinValue(): Char {
+fun Char?.notNullOrMinValue(): Char {
     this?.let {
         return it
     }
@@ -15,7 +15,7 @@ fun Char?.extNSCRNotNullOrMinValue(): Char {
  * if char is null return default char value
  */
 
-fun Char?.extNSCRNotNullOrDefault(defaultValue: Char): Char {
+fun Char?.notNullOrDefault(defaultValue: Char): Char {
     this?.let {
         return it
     }

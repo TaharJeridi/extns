@@ -8,7 +8,7 @@ import java.math.BigInteger
  * if value of string is null return empty string
  */
 
-fun String?.extNSSNotNullOrEmpty(): String {
+fun String?.notNullOrEmpty(): String {
     this?.let {
         return it
     }
@@ -19,7 +19,7 @@ fun String?.extNSSNotNullOrEmpty(): String {
  * if value of string is null return default value
  */
 
-fun String?.extNSSNotNullOrDefault(defaultValue: String): String {
+fun String?.notNullOrDefault(defaultValue: String): String {
     this?.let {
         return it
     }
@@ -30,7 +30,7 @@ fun String?.extNSSNotNullOrDefault(defaultValue: String): String {
  * convert string to int, return zero int value if exception happen
  */
 
-fun String?.toIntExtNSS(): Int {
+fun String?.toSafeInt(): Int {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             StringParserUtils.toInt(this)
@@ -45,7 +45,7 @@ fun String?.toIntExtNSS(): Int {
  * convert string to int, return default value if exception happen
  */
 
-fun String?.toIntOrDefaultExtNSS(defaultValue: Int): Int {
+fun String?.toSafeIntOrDefault(defaultValue: Int): Int {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             StringParserUtils.toInt(this, defaultValue)
@@ -60,7 +60,7 @@ fun String?.toIntOrDefaultExtNSS(defaultValue: Int): Int {
  * convert string to float, return zero float value if exception happen
  */
 
-fun String?.toFloatExtNSS(): Float {
+fun String?.toSafeFloat(): Float {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             StringParserUtils.toFloat(this)
@@ -75,7 +75,7 @@ fun String?.toFloatExtNSS(): Float {
  * convert string to float, return default value if exception happen
  */
 
-fun String?.toFloatOrDefaultExtNSS(defaultValue: Float): Float {
+fun String?.toSafeFloatOrDefault(defaultValue: Float): Float {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             StringParserUtils.toFloat(this, defaultValue)
@@ -90,7 +90,7 @@ fun String?.toFloatOrDefaultExtNSS(defaultValue: Float): Float {
  * convert string to double, return zero double value if exception happen
  */
 
-fun String?.toDoubleExtNSS(): Double {
+fun String?.toSafeDouble(): Double {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             StringParserUtils.toDouble(this)
@@ -105,7 +105,7 @@ fun String?.toDoubleExtNSS(): Double {
  * convert string to double, return default value if exception happen
  */
 
-fun String?.toDoubleOrDefaultExtNSS(defaultValue: Double): Double {
+fun String?.toSafeDoubleOrDefault(defaultValue: Double): Double {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             StringParserUtils.toDouble(this, defaultValue)
@@ -120,7 +120,7 @@ fun String?.toDoubleOrDefaultExtNSS(defaultValue: Double): Double {
  * convert string to big integer,return zero value if exception happen
  */
 
-fun String?.toBigIntegerExtNSS(): BigInteger {
+fun String?.toSafeBigIntegerOrDefault(): BigInteger {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toBigInteger(this)
@@ -135,7 +135,7 @@ fun String?.toBigIntegerExtNSS(): BigInteger {
  * convert string to big integer, return default value if exception happen
  */
 
-fun String?.toBigIntegerExtNSS(defaultValue: BigInteger): BigInteger {
+fun String?.toSafeBigIntegerOrDefault(defaultValue: BigInteger): BigInteger {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toBigInteger(this, defaultValue)
@@ -150,7 +150,7 @@ fun String?.toBigIntegerExtNSS(defaultValue: BigInteger): BigInteger {
  * convert string to big decimal, return zero big decimal value if exception happen
  */
 
-fun String?.toBigDecimalExtNSS(): BigDecimal {
+fun String?.toSafeBigDecimal(): BigDecimal {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toBigDecimal(this)
@@ -165,7 +165,7 @@ fun String?.toBigDecimalExtNSS(): BigDecimal {
  * convert string to big decimal, return default value if exception happen
  */
 
-fun String?.toBigDecimalOrDefaultExtNSS(defaultValue: BigDecimal): BigDecimal {
+fun String?.toSafeBigDecimalOrDefault(defaultValue: BigDecimal): BigDecimal {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toBigDecimal(this, defaultValue)
@@ -180,7 +180,7 @@ fun String?.toBigDecimalOrDefaultExtNSS(defaultValue: BigDecimal): BigDecimal {
  * convert string to byte, return zero byte value if exception happen
  */
 
-fun String?.toByteExtNSS(): Byte {
+fun String?.toSafeByte(): Byte {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toByte(this)
@@ -195,7 +195,7 @@ fun String?.toByteExtNSS(): Byte {
  * convert string to byte, return default value if exception happen
  */
 
-fun String?.toByteOrDefaultExtNSS(defaultValue: Byte): Byte {
+fun String?.toSafeByteOrDefault(defaultValue: Byte): Byte {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toByte(this, defaultValue)
@@ -210,7 +210,7 @@ fun String?.toByteOrDefaultExtNSS(defaultValue: Byte): Byte {
  * convert string to short, return zero short value if exception happen
  */
 
-fun String?.toShortExtNSS(): Short {
+fun String?.toSafeShort(): Short {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toShort(this)
@@ -225,7 +225,7 @@ fun String?.toShortExtNSS(): Short {
  * convert string to short, return default value if exception happen
  */
 
-fun String?.toShortOrDefaultExtNSS(defaultValue: Short): Short {
+fun String?.toSafeShortOrDefault(defaultValue: Short): Short {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toShort(this, defaultValue)
@@ -240,7 +240,7 @@ fun String?.toShortOrDefaultExtNSS(defaultValue: Short): Short {
  * convert string to long, return zero long value if exception happen
  */
 
-fun String?.toLongExtNSS(): Long {
+fun String?.toSafeLong(): Long {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toLong(this)
@@ -255,7 +255,7 @@ fun String?.toLongExtNSS(): Long {
  * convert string to long, return default value if exception happen
  */
 
-fun String?.toLongOrDefaultExtNSS(defaultValue: Long): Long {
+fun String?.toSafeLongOrDefault(defaultValue: Long): Long {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toLong(this, defaultValue)
@@ -270,7 +270,7 @@ fun String?.toLongOrDefaultExtNSS(defaultValue: Long): Long {
  * convert string to boolean, return false if exception happen
  */
 
-fun String?.toBooleanExtNSS(): Boolean {
+fun String?.toSafeBoolean(): Boolean {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toBoolean(this)
@@ -285,7 +285,7 @@ fun String?.toBooleanExtNSS(): Boolean {
  * convert string to boolean,return default value if exception happen
  */
 
-fun String?.toBooleanOrDefaultExtNSS(defaultValue: Boolean): Boolean {
+fun String?.toSafeBooleanOrDefault(defaultValue: Boolean): Boolean {
     this?.let {
         return if (!this.isNullOrEmpty()) {
             return StringParserUtils.toBoolean(this, defaultValue)
@@ -300,7 +300,7 @@ fun String?.toBooleanOrDefaultExtNSS(defaultValue: Boolean): Boolean {
  * add vararg string in arrayList if string is not empty
  */
 
-fun extNSSStringArray(vararg strings: String): ArrayList<String> {
+fun notEmptyStringArray(vararg strings: String): ArrayList<String> {
     val resultArray = ArrayList<String>()
     for (string in strings) {
         if (string.isNotEmpty()) {

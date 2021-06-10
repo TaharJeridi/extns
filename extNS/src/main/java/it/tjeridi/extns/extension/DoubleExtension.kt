@@ -4,7 +4,7 @@ package it.tjeridi.extns.extension
  * if double is null return zero double value
  */
 
-fun Double?.extNSDBNotNullOrZero(): Double {
+fun Double?.notNullOrZero(): Double {
     this?.let {
         return it
     }
@@ -15,7 +15,7 @@ fun Double?.extNSDBNotNullOrZero(): Double {
  * if double is null return default double value
  */
 
-fun Double?.extNSDBNotNullOrDefault(defaultValue: Double): Double {
+fun Double?.notNullOrDefault(defaultValue: Double): Double {
     this?.let {
         return it
     }

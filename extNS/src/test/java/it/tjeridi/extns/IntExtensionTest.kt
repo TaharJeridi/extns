@@ -1,7 +1,7 @@
 package it.tjeridi.extns
 
-import it.tjeridi.extns.extension.extNSIntNotNullOrDefault
-import it.tjeridi.extns.extension.extNSIntNotNullOrZero
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrZero
 import org.junit.Test
 
 class IntExtensionTest {
@@ -18,11 +18,11 @@ class IntExtensionTest {
 
     @Test
     fun notNullOrZeroTest() {
-        assert(NULL_INT.extNSIntNotNullOrZero() == 0 && NOT_NULL_INT.extNSIntNotNullOrZero() == NOT_NULL_INT)
+        assert(NULL_INT.notNullOrZero() == 0 && NOT_NULL_INT.notNullOrZero() == NOT_NULL_INT)
     }
 
     @Test
     fun notNullOrDefaultTest() {
-        assert(NULL_INT.extNSIntNotNullOrDefault(DEFAULT_VALUE_INT) == DEFAULT_VALUE_INT && NOT_NULL_INT.extNSIntNotNullOrDefault(DEFAULT_VALUE_INT) == NOT_NULL_INT)
+        assert(NULL_INT.notNullOrDefault(DEFAULT_VALUE_INT) == DEFAULT_VALUE_INT && NOT_NULL_INT.notNullOrDefault(DEFAULT_VALUE_INT) == NOT_NULL_INT)
     }
 }

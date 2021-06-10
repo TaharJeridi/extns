@@ -1,7 +1,7 @@
 package it.tjeridi.extns
 
-import it.tjeridi.extns.extension.extNSNotNullOrDefault
-import it.tjeridi.extns.extension.extNSNotNullOrZero
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrZero
 import org.junit.Test
 
 class LongExtensionTest {
@@ -17,11 +17,11 @@ class LongExtensionTest {
 
     @Test
     fun notNullOrZero() {
-        assert(LONG_NULL_VALUE.extNSNotNullOrZero() == 0L && LONG_VALUE_NOT_NULL.extNSNotNullOrZero() == LONG_VALUE_NOT_NULL)
+        assert(LONG_NULL_VALUE.notNullOrZero() == 0L && LONG_VALUE_NOT_NULL.notNullOrZero() == LONG_VALUE_NOT_NULL)
     }
 
     @Test
     fun notNullOrDefault() {
-        assert(LONG_NULL_VALUE.extNSNotNullOrDefault(DEFAULT_LONG_VALUE) == 3.toLong())
+        assert(LONG_NULL_VALUE.notNullOrDefault(DEFAULT_LONG_VALUE) == 3.toLong())
     }
 }

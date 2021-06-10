@@ -1,8 +1,8 @@
 package it.tjeridi.extns
 
-import it.tjeridi.extns.extension.extNSBLNotNullOrDefault
-import it.tjeridi.extns.extension.extNSBLNotNullOrFalse
-import it.tjeridi.extns.extension.extNSBLNotNullOrTrue
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrFalse
+import it.tjeridi.extns.extension.notNullOrTrue
 import org.junit.Test
 
 class BooleanExtensionTest {
@@ -20,19 +20,19 @@ class BooleanExtensionTest {
 
     @Test
     fun notNullOrFalseTest() {
-        assert(!NULL_BOOLEAN_VALUE.extNSBLNotNullOrFalse()
-                && NOT_NULL_TRUE_BOOLEAN_VALUE.extNSBLNotNullOrFalse() == NOT_NULL_TRUE_BOOLEAN_VALUE)
+        assert(!NULL_BOOLEAN_VALUE.notNullOrFalse()
+                && NOT_NULL_TRUE_BOOLEAN_VALUE.notNullOrFalse() == NOT_NULL_TRUE_BOOLEAN_VALUE)
     }
 
     @Test
     fun notNullOrTrueTest() {
-        assert(NULL_BOOLEAN_VALUE.extNSBLNotNullOrTrue()
-                && NOT_NULL_FALSE_BOOLEAN_VALUE.extNSBLNotNullOrTrue() == NOT_NULL_FALSE_BOOLEAN_VALUE)
+        assert(NULL_BOOLEAN_VALUE.notNullOrTrue()
+                && NOT_NULL_FALSE_BOOLEAN_VALUE.notNullOrTrue() == NOT_NULL_FALSE_BOOLEAN_VALUE)
     }
 
     @Test
     fun notNullOrDefaultValue() {
-        assert(NULL_BOOLEAN_VALUE.extNSBLNotNullOrDefault(DEFAULT_BOOLEAN_VALUE) == DEFAULT_BOOLEAN_VALUE
-                && NOT_NULL_FALSE_BOOLEAN_VALUE.extNSBLNotNullOrDefault(DEFAULT_BOOLEAN_VALUE) == NOT_NULL_FALSE_BOOLEAN_VALUE)
+        assert(NULL_BOOLEAN_VALUE.notNullOrDefault(DEFAULT_BOOLEAN_VALUE) == DEFAULT_BOOLEAN_VALUE
+                && NOT_NULL_FALSE_BOOLEAN_VALUE.notNullOrDefault(DEFAULT_BOOLEAN_VALUE) == NOT_NULL_FALSE_BOOLEAN_VALUE)
     }
 }

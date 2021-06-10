@@ -6,7 +6,7 @@ import java.math.BigDecimal
  * if value of big decimal is null return zero big decimal value
  */
 
-fun BigDecimal?.extNSBDNotNullOrZero(): BigDecimal {
+fun BigDecimal?.notNullOrZero(): BigDecimal {
     this?.let {
         return it
     }
@@ -17,7 +17,7 @@ fun BigDecimal?.extNSBDNotNullOrZero(): BigDecimal {
  * if value of big decimal is null return default big decimal value
  */
 
-fun BigDecimal?.extNSBDNotNullOrDefault(defaultValue: BigDecimal): BigDecimal {
+fun BigDecimal?.notNullOrDefault(defaultValue: BigDecimal): BigDecimal {
     this?.let {
         return it
     }

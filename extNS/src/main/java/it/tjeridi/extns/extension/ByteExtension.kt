@@ -4,7 +4,7 @@ package it.tjeridi.extns.extension
  *  if value of byte is null return zero byte value
  */
 
-fun Byte?.extNSBTNotNullOrZero(): Byte {
+fun Byte?.notNullOrZero(): Byte {
     this?.let {
         return it
     }
@@ -15,7 +15,7 @@ fun Byte?.extNSBTNotNullOrZero(): Byte {
  * if value of byte is null return default byte value
  */
 
-fun Byte?.extNSBTNotNullOrDefault(defaultValue: Byte): Byte {
+fun Byte?.notNullOrDefault(defaultValue: Byte): Byte {
     this?.let {
         return it
     }

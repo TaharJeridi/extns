@@ -1,7 +1,7 @@
 package it.tjeridi.extns
 
-import it.tjeridi.extns.extension.extNSBDNotNullOrDefault
-import it.tjeridi.extns.extension.extNSBDNotNullOrZero
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrZero
 import it.tjeridi.extns.extension.zeroBigDecimalValue
 import org.junit.Test
 import java.math.BigDecimal
@@ -20,13 +20,13 @@ class BigDecimalExtensionTest {
 
     @Test
     fun notNullOrZeroTest() {
-        assert(NULL_BIG_DECIMAL_VALUE.extNSBDNotNullOrZero() == zeroBigDecimalValue()
-                && NOT_NULL_BIG_DECIMAL_VALUE.extNSBDNotNullOrZero() == NOT_NULL_BIG_DECIMAL_VALUE)
+        assert(NULL_BIG_DECIMAL_VALUE.notNullOrZero() == zeroBigDecimalValue()
+                && NOT_NULL_BIG_DECIMAL_VALUE.notNullOrZero() == NOT_NULL_BIG_DECIMAL_VALUE)
     }
 
     @Test
     fun notNullOrDefaultTest() {
-        assert(NULL_BIG_DECIMAL_VALUE.extNSBDNotNullOrDefault(DEFAULT_BIG_DECIMAL_VALUE) == DEFAULT_BIG_DECIMAL_VALUE
-                && NOT_NULL_BIG_DECIMAL_VALUE.extNSBDNotNullOrDefault(DEFAULT_BIG_DECIMAL_VALUE) == NOT_NULL_BIG_DECIMAL_VALUE)
+        assert(NULL_BIG_DECIMAL_VALUE.notNullOrDefault(DEFAULT_BIG_DECIMAL_VALUE) == DEFAULT_BIG_DECIMAL_VALUE
+                && NOT_NULL_BIG_DECIMAL_VALUE.notNullOrDefault(DEFAULT_BIG_DECIMAL_VALUE) == NOT_NULL_BIG_DECIMAL_VALUE)
     }
 }

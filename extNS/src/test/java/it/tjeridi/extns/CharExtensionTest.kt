@@ -1,7 +1,7 @@
 package it.tjeridi.extns
 
-import it.tjeridi.extns.extension.extNSCRNotNullOrDefault
-import it.tjeridi.extns.extension.extNSCRNotNullOrMinValue
+import it.tjeridi.extns.extension.notNullOrDefault
+import it.tjeridi.extns.extension.notNullOrMinValue
 import org.junit.Test
 
 class CharExtensionTest {
@@ -18,13 +18,13 @@ class CharExtensionTest {
 
     @Test
     fun notNullOrMinValueTest(){
-        assert(CHAR_VALUE_NULL.extNSCRNotNullOrMinValue() == Char.MIN_VALUE
-                && CHAR_VALUE_NOT_NULL.extNSCRNotNullOrMinValue() == CHAR_VALUE_NOT_NULL)
+        assert(CHAR_VALUE_NULL.notNullOrMinValue() == Char.MIN_VALUE
+                && CHAR_VALUE_NOT_NULL.notNullOrMinValue() == CHAR_VALUE_NOT_NULL)
     }
 
     @Test
     fun notNullOrDefaultTest(){
-        assert(CHAR_VALUE_NULL.extNSCRNotNullOrDefault(DEFAULT_CHAR_VALUE) == DEFAULT_CHAR_VALUE
-                && CHAR_VALUE_NOT_NULL.extNSCRNotNullOrDefault(DEFAULT_CHAR_VALUE) == CHAR_VALUE_NOT_NULL)
+        assert(CHAR_VALUE_NULL.notNullOrDefault(DEFAULT_CHAR_VALUE) == DEFAULT_CHAR_VALUE
+                && CHAR_VALUE_NOT_NULL.notNullOrDefault(DEFAULT_CHAR_VALUE) == CHAR_VALUE_NOT_NULL)
     }
 }
