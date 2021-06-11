@@ -36,6 +36,17 @@ fun <T> T?.isNotNull(): Boolean {
     return false
 }
 
+/**
+ * return true if object is null
+ */
+
+fun <T> T?.isNull(): Boolean {
+    this?.let {
+        return false
+    }
+    return true
+}
+
 internal fun emptyString(): String {
     return ""
 }

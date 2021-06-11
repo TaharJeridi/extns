@@ -178,5 +178,12 @@ class StringExtensionTest {
         assert(notEmptyStringArray(BOOLEAN_VALUE_STRING, NOT_NULL_STRING) == arrayListOf(BOOLEAN_VALUE_STRING, NOT_NULL_STRING))
     }
 
+    @Test
+    fun safeSubSequenceTest(){
+        assert(NULL_STRING.safeSubSequence(0,4) == emptyString()
+                && NOT_NULL_STRING.safeSubSequence(0,4) == NOT_NULL_STRING.subSequence(0,4)
+                && NOT_NULL_STRING.safeSubSequence(0,500) == NOT_NULL_STRING)
+    }
+
 
 }

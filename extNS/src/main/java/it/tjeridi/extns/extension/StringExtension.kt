@@ -297,6 +297,20 @@ fun String?.toSafeBooleanOrDefault(defaultValue: Boolean): Boolean {
 }
 
 /**
+ *  return subSequence string if string is not empty
+ */
+
+fun String?.safeSubSequence(startIndex: Int, endIndex: Int): String {
+    this?.let {
+        if (isEmpty()) {
+            return emptyString()
+        }
+        return subSequence(startIndex, kotlin.math.min(length, endIndex)).toSafeString()
+    }
+    return emptyString()
+}
+
+/**
  * add vararg string in arrayList if string is not empty
  */
 
@@ -309,5 +323,6 @@ fun notEmptyStringArray(vararg strings: String): ArrayList<String> {
     }
     return resultArray
 }
+
 
 
